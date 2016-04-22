@@ -27,6 +27,9 @@ export BOXEN_REDIS_IP="192.168.33.10"
 export PS1="\n(${clr3}\w${clrx})[${clr6}\u${clrx}]=> "
 export PS2="=> "
 
+#Vim forever
+export EDITOR="vim"
+
 #Autocomplete for git
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -167,6 +170,12 @@ _tp ()
 }
 complete -o plusdirs -F _tp tp 
 
+
+babyfile ()
+{
+  find -type f -print0 | xargs -r0 stat -c %y\ %n | sort -r | head -n 1 | awk 'NF>1{print $NF}'
+}
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
@@ -174,3 +183,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.rubotorc
 # END Ruboto setup
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
