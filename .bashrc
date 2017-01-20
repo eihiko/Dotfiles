@@ -30,6 +30,9 @@ export PS2="=> "
 #Vim forever
 export EDITOR="vim"
 
+# disable caps
+setxkbmap -option caps:none
+
 #Autocomplete for git
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
