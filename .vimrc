@@ -2,7 +2,7 @@
 set nocompatible
 
 "Pathogen package manager for vim
-"execute pathogen#infect()
+execute pathogen#infect()
 
 "Unix fileformats only! (Fuck carriage returns!)
 set ffs=unix
@@ -118,3 +118,18 @@ set titlestring=%F%r%m
 "  endif
 "endfunction
 ":inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+"syntastic settings
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_rust_checkers = ["cargo"]
+
+
+"rustfmt settings
+let g:rustfmt_autosave = 1
